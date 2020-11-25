@@ -1,0 +1,11 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/upload_comment"
+        android:title="发表评论"
+
+        app:showAsAction="ifRoom" />
+
+</menu>

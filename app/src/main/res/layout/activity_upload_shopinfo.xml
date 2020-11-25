@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        app:popupTheme="@style/CommentPopupMenu"
+        app:title="请上传店铺信息"
+        app:menu="@menu/upload_shopinfo_menu"
+        android:id="@+id/toolbar_upload_shop_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <ImageButton
+        android:id="@+id/upload_shop_img"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/upload_shop_bg"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <EditText
+        android:id="@+id/edit_shop_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="店铺名字:" />
+    <EditText
+        android:id="@+id/edit_shop_type"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="店铺类型:" />
+</LinearLayout>

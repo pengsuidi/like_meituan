@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:textStyle="italic"
+        android:textSize="23dp"
+        android:textAlignment="textStart"
+        android:text="电子科技大学"
+        android:id="@+id/search_item"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/transparent_txt"
+        android:drawableLeft="@drawable/house_img"
+        android:layout_gravity="start" />
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

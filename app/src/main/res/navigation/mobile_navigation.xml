@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_main_page">
+    <fragment
+        android:id="@+id/navigation_main_page"
+        android:name="com.amaker.personalinfo.Fragment_NavigationUI.MainPage.MainPageFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_main_page" />
+    <fragment
+        android:id="@+id/navigation_history_orders"
+        android:name="com.amaker.personalinfo.Fragment_NavigationUI.HistoryOrders.HistoryOrdersFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_history_orders" />
+
+    <fragment
+        android:id="@+id/navigation_person_center"
+        android:name="com.amaker.personalinfo.Fragment_NavigationUI.PersonCenter.PersonCenterFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_person_center" />
+    <fragment
+        android:id="@+id/navigation_MyShop"
+        android:name="com.amaker.personalinfo.Fragment_NavigationUI.MyShop.MyShopFragment"
+        android:label="我的店铺"
+        tools:layout="@layout/fragment_person_center" />
+</navigation>

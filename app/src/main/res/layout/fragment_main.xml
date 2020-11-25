@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"></TextView>
+        <LinearLayout
+            android:background="@drawable/rounded_border"
+            android:id="@+id/to_search"
+            android:orientation="horizontal"
+            android:layout_weight="11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_baseline_search_24" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="match_parent"
+                android:text="你想搜些啥" />
+        </LinearLayout>
+
+        <Button
+            android:background="@mipmap/add"
+            android:id="@+id/to_menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </Button>
+
+
+    </LinearLayout>
+
+        <com.pagegridviewlibrary.PageGridView
+            android:id="@+id/vp_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:indicatorPadding="10dp"
+            app:isShowIndicator="true"
+            app:itemView="@layout/my_item_view"
+            app:numColumns="4"
+            app:pageSize="4"
+            app:selectedIndicator="@mipmap/ic_dot_selected"
+            app:unSelectedIndicator="@mipmap/ic_dot_normal" />
+
+        <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_height="275dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shop_recycleview_home"
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
+        </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"></LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+
+
+

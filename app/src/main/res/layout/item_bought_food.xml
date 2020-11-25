@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@drawable/rounded"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/food_name"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="锅巴土豆"
+            android:textColor="#C0C0C0"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/food_price"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="10元"
+            android:textColor="#C0C0C0"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+</LinearLayout>

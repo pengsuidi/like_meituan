@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/rounded_white_20"
+    android:orientation="vertical">
+    <Button
+        android:drawableLeft="@drawable/ic_takeaway"
+        android:id="@+id/MyShopName"
+        android:background="@drawable/rounded_border"
+        android:text="土豆王"
+        android:gravity="left|center"
+        android:textColor="#FFD700"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.03"
+        android:layout_height="0dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <ImageButton
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/MyShop_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#00000000" />
+    </LinearLayout>
+    <Button
+        android:layout_weight="1"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_gravity="right"
+        android:text="修改"
+        android:background="@drawable/rounded_white_black"
+        android:layout_marginBottom="20dp"/>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="本次订单的商品"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#4169E1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/food_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

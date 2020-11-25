@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:title="购物车"
+        app:titleTextColor="#FFD700"
+        app:navigationIcon="@drawable/back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:textSize="15sp"
+            android:text="总价格:"
+            android:textStyle="bold"
+            android:layout_width="50dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/sum"
+            android:textSize="15sp"
+            android:textColor="#E3170D"
+            android:text="0元"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shoppingcar_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"/>
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/buy_btn"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_btn_buy"
+        android:text="支付"
+        android:textColor="#292421"
+        android:textSize="25sp" />
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#66000000</color>
+    <color name="colorPrimaryDark">#ffd200</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="press">#F5F5F5</color>
+    <color name="not_press">#FF9912</color>
+    <color name="press_comment" >#FF9912</color>
+    <color name="not_press_comment" >#FFFFCD</color>
+    <color name="buy_color" >#FF9912</color>
+    <color name="comment_bg" >#F8F8FF</color>
+    <color name="gray">#808080</color>
+    <color name="color_minefragment_top">#20B2AA</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="white">#ffffff</color> <!-- 白色 -->
+    <color name="red">#ff4500</color> <!-- red -->
+    <color name="cutePink">#ff00f0</color>
+    <color name="black">#000000</color>
+    <color name="orange">#ffd500</color>
+    <color name="yellow" >#ffff00</color>
+</resources>

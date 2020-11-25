@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/food_type_menu"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="150dp"
+            android:background="@drawable/rounded_type_bg" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_foods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="150dp"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_flesh_10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center|top"
+            android:text="满25减1,满36减,满56减4,满85减6"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_shoppingcar">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|left"
+                android:background="#00000000"
+                app:srcCompat="@drawable/ic_deliverer" />
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tmp_sum"
+                    android:layout_width="66dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="¥0"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="另需配送费¥0.0"
+                    android:textColor="#9f9f9f"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/to_shoppingcar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/right_rounded_black"
+                android:gravity="right|center"
+                android:paddingRight="20dp"
+                android:text="¥15起送"
+                android:textSize="20sp"
+                android:textColor="#9b9b9b" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical"
+    tools:context=".Fragment_NavigationUI.PersonCenter.PersonCenterFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="#ffd200"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <ImageButton
+                android:id="@+id/user_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/comment_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="left|top"
+                android:layout_marginTop="20dp"
+                android:text="ID号:"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:layout_marginTop="20dp"
+                android:text="xxxxxx"
+                android:textColor="#ff1493"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <Button
+
+                android:id="@+id/favourite"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="收藏"
+                android:layout_marginBottom="10dp"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_collect" />
+
+            <Button
+
+                android:id="@+id/comment"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="10dp"
+                android:text="评价"
+                android:layout_marginBottom="10dp"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_comment" />
+
+            <ImageButton
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#00000000"
+                app:srcCompat="@drawable/ic_tmp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="40dp"
+                android:text="临时"
+                android:textStyle="bold" />
+            <ImageButton
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#00000000"
+                app:srcCompat="@drawable/ic_tmp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="40dp"
+                android:text="临时"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_white_20">
+
+        <Button
+
+            android:id="@+id/history_orders"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_orders"
+            android:text="我的订单"
+            android:textColor="#4c4c4c" />
+        <Button
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_tmp"
+            android:text="临时"
+            android:textColor="#4c4c4c" />
+        <Button
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_tmp"
+            android:text="临时"
+            android:textColor="#4c4c4c" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/rounded_white_20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="推荐工具"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/become_seller"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_cooperation"
+            android:text="合作" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="50dp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_tmp"
+            android:text="临时" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="50dp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_tmp"
+            android:text="临时" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="50dp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_tmp"
+            android:text="临时" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="120dp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_tmp"
+            android:text="临时" />
+    </RelativeLayout>
+
+
+</FrameLayout>

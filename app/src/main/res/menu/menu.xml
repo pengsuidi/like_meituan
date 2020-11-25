@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    android:focusable="false"
+    <item android:title="扫一扫"
+        android:id="@+id/home_scan"></item>
+    <item android:title="付款码"
+        android:id="@+id/home_payment_code"></item>
+    <item android:title="开发票"
+        android:id="@+id/home_draw_bill"></item>
+</menu>

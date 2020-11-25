@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearlayout"
+    android:background="@drawable/rounded_text"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <ImageButton
+            android:id="@+id/to_choose_FoodImg"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_food_bg" />
+
+        <EditText
+            android:id="@+id/food_name"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:hint="请输入食品名字"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/food_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="请输入食品类型"
+            android:inputType="textMultiLine" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="价格:"
+            android:textColor="#FFD700"
+            android:textSize="20sp" />
+
+        <EditText
+            android:gravity="right|center"
+            android:id="@+id/food_price"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:hint="请填数字" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+
+            android:background="@drawable/yuan_bg"
+            android:src="@drawable/yuan" />
+
+        <EditText
+            android:id="@+id/food_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="输入食品描述"
+            android:inputType="textMultiLine" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageButton
+            android:id="@+id/save_FoodMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_save_or_delete_bg"
+            app:srcCompat="@drawable/save_foodmenu" />
+
+        <ImageButton
+            android:id="@+id/delete_FoodMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_save_or_delete_bg"
+            app:srcCompat="@drawable/delete_foodmenu" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+</LinearLayout>

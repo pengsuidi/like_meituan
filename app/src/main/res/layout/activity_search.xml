@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--定义一个SearchView-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/back"
+            android:background="@drawable/left"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            >
+
+        </ImageButton>
+        <SearchView
+            android:layout_weight="7"
+            android:background="@drawable/searching_bg"
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:text="搜索"
+            android:background="@drawable/transparent_txt"
+            android:id="@+id/click_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <!--定义自动完成的ListView-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+     />
+</LinearLayout>

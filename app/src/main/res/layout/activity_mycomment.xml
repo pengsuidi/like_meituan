@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#f6f6f6"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        app:title="xxxxxxxxxxxx"
+        android:id="@+id/toolbar"
+        app:navigationIcon="@drawable/back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <TextView
+        android:background="#ffffff"
+        android:textStyle="bold"
+        android:id="@+id/comment_count"
+        android:text="评价"
+        android:textSize="20sp"
+        android:paddingLeft="30dp"
+        android:gravity="center|left"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="#f6f6f6"
+        android:layout_width="match_parent"
+        android:id="@+id/recycler_comments"
+        android:layout_height="match_parent"/>
+</LinearLayout>
