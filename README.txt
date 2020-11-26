@@ -79,3 +79,4 @@ map为服务器需求的参数,handler重写HandlerMessage来处理收到服务�
     JSONArray jsonArray = (JSONArray) result.getData();List<MyEntity> datas = jsonArray.toJavaList(MyEntity.class);
 3.
  
+asdasd
