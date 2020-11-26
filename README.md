@@ -1,13 +1,19 @@
 # like_meituan
 初学安卓,仿制美团
 依赖添加:
+权限:
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+application中添加:
+    android:networkSecurityConfig="@xml/network_security_config"
+
+build.gradle:
 allprojects {
     repositories {
         google()
         jcenter()
         maven { url "https://dl.bintray.com/lingguoding/maven";; }
-
-
     }
 }
 
@@ -18,7 +24,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.1.0'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.3.0'
@@ -26,8 +31,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-
     /* OKHttp、Okio */
     implementation "com.squareup.okhttp3:okhttp:4.7.2"
     implementation "com.squareup.okio:okio:2.7.0"
@@ -56,7 +59,8 @@ dependencies {
 
 
 1. 与后端服务器的连接方法已经封装在OkHttpUtil类中,常使用post方法,post(String url,Map<Strirng,Object> map,Handler handler);
-url为相应在服务器上写的servlet,如"http://106.54.87.185:8080/ServletTest/BecomeSeller",map为服务器需求的参数,handler重写HandlerMessage来处理收到服务器发送的数据
+url为相应在服务器上写的servlet,如"http://106.54.87.185:8080/ServletTest/BecomeSeller"; 
+map为服务器需求的参数,handler重写HandlerMessage来处理收到服务器发送的数据.
 2. 在handler中处理收到的数据时,将服务器发送的JSONObject转化为Result对象:
     private Handler handler = new Handler(Looper.myLooper()) {
         @Override
