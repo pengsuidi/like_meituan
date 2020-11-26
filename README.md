@@ -2,13 +2,17 @@
 初学安卓,仿制美团
 依赖添加:
 权限:
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
 application中添加:
+
     android:networkSecurityConfig="@xml/network_security_config"
 
 build.gradle:
+
 allprojects {
     repositories {
         google()
@@ -17,7 +21,9 @@ allprojects {
     }
 }
 
+
 dependencies {
+
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -59,9 +65,13 @@ dependencies {
 
 
 1. 与后端服务器的连接方法已经封装在OkHttpUtil类中,常使用post方法,post(String url,Map<Strirng,Object> map,Handler handler);
+
 url为相应在服务器上写的servlet,如"http://106.54.87.185:8080/ServletTest/BecomeSeller"; 
+
 map为服务器需求的参数,handler重写HandlerMessage来处理收到服务器发送的数据.
+
 2. 在handler中处理收到的数据时,将服务器发送的JSONObject转化为Result对象:
+
     private Handler handler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -72,10 +82,12 @@ map为服务器需求的参数,handler重写HandlerMessage来处理收到服务�
                 default:
                     break;
             }
-
         }
     }
-    将返回的数据转化为所需的List,同理将JSONArray换成JSONObject即可转化为我们自定的数据类
+    
+    将返回的数据转化为所需的List,同理将JSONArray换成JSONObject即可转化为我们自定的数据类:
+    
     JSONArray jsonArray = (JSONArray) result.getData();List<MyEntity> datas = jsonArray.toJavaList(MyEntity.class);
+    
 3.
  
