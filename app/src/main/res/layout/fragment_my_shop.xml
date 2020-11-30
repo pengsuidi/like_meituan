@@ -6,26 +6,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Fragment_NavigationUI.MyShop.MyShopFragment">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f4f4">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_shop_toolbar"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         app:menu="@menu/my_shop_toolbar_menu"
         app:popupTheme="@style/CommentPopupMenu"
         app:title="我的店铺"
         app:titleTextColor="#00bfff"
         tools:ignore="NewApi" />
 
-    <LinearLayout
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f4f4f4">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/MyShop_Recyclerview"
+            android:layout_weight="10"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp" />
     </LinearLayout>
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif_view"

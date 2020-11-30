@@ -1,5 +1,6 @@
 package com.amaker.personalinfo.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -106,7 +107,6 @@ public class menuFragment extends Fragment implements View.OnClickListener {
                         content.setVisibility(View.VISIBLE);
 
 
-
                         adapter.notifyDataSetChanged();
                         //添加一个"全部"按钮
 
@@ -147,7 +147,7 @@ public class menuFragment extends Fragment implements View.OnClickListener {
             }
         }
     };
-    //从adapter中获取被添加的食物信息
+    //从adapter中获取被添加和删除的食物信息
     private Handler getOrderedFoodHandler = new Handler(Looper.myLooper()) {
         @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
@@ -170,8 +170,8 @@ public class menuFragment extends Fragment implements View.OnClickListener {
                     System.out.println("收到的name:" + (msg.obj.toString()));
                     for (int i = 0; i < OrderedFoodList.size(); i++) {
                         if (OrderedFoodList.get(i).getFood_name() == msg.obj.toString()) {
+                            sum -= Float.parseFloat(OrderedFoodList.get(i).getFood_price());
                             OrderedFoodList.remove(i);
-                            sum -= Float.parseFloat(FoodDatas.get(i).getFood_price());
                             tmp_sum.setText("¥" + sum);
                             if_deliver(deliver_price);
                             break;
@@ -186,6 +186,7 @@ public class menuFragment extends Fragment implements View.OnClickListener {
         }
     };
 
+    @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void if_deliver(Float deliver_price)//判断是否可以起送
     {

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amaker.personalinfo.Activities.NewUploadFoodMenuActivity;
 import com.amaker.personalinfo.Activities.ShopActivity;
-import com.amaker.personalinfo.Activities.UploadFoodMenuActivity;
+
 import com.amaker.personalinfo.R;
 import com.amaker.personalinfo.entity.Shop_Info;
 import com.amaker.personalinfo.util.CommonUtil;

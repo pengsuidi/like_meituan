@@ -37,15 +37,16 @@
             android:layout_height="80dp"
             android:background="#00000000" />
     </LinearLayout>
+
     <Button
         android:id="@+id/to_upload_food_menu_btn"
-        android:layout_weight="1"
         android:layout_width="80dp"
         android:layout_height="0dp"
         android:layout_gravity="right"
-        android:text="上传菜单"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
         android:background="@drawable/rounded_white_black"
-        android:layout_marginBottom="20dp"/>
+        android:text="上传菜品" />
 
 
 

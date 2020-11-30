@@ -24,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.amaker.personalinfo.Fragment_NavigationUI.MainPage.MainPageFragment;
 import com.amaker.personalinfo.R;
 import com.amaker.personalinfo.entity.Result;
 import com.amaker.personalinfo.entity.Shop_Info;
@@ -43,17 +44,18 @@ public class UploadShopInfoActivity extends AppCompatActivity {
     private Uri uri;
     private Bitmap bitmap;
     private String image_64;
+    private String shopid="1";
     private Toolbar toolbar;
     private Handler handler = new Handler(Looper.myLooper()) {
         @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
-        public void handleMessage(Message msg) {//构建RecyclerView,
+        public void handleMessage(Message msg) {
             switch (msg.what) {
-                case Config.STATUS_OK://网络请求成功，但响应需要根据实际来操作
+                case Config.STATUS_OK://网络请求成功
                     Result result = JSONObject.parseObject(msg.obj.toString(), Result.class);
                     if(result.getCode()==Config.STATUS_OK)
                     {
-                        Intent intent=new Intent(UploadShopInfoActivity.this,UploadFoodMenuActivity.class);
+                        Intent intent=new Intent(UploadShopInfoActivity.this, MainPageFragment.class);
                         startActivity(intent);
                     }
 
