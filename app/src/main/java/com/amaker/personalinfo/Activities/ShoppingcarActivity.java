@@ -157,6 +157,7 @@ public class ShoppingcarActivity extends AppCompatActivity {
                 intent.putStringArrayListExtra(Config.FOOD_NAME_LIST,food_name_list);
                 intent.putExtra("sum", sum.toString());
                 intent.putExtra(Config.REQUEST_PARAMETER_SHOP_ID, getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOP_ID));
+                intent.putExtra(Config.REQUEST_PARAMETER_SHOPNAME, getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOPNAME));
                 startActivity(intent);
             }
         });

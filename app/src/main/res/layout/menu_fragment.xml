@@ -86,10 +86,10 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/right_rounded_black"
                 android:gravity="right|center"
-                android:paddingRight="20dp"
+                android:paddingRight="10dp"
                 android:text="¥15起送"
-                android:textSize="20sp"
-                android:textColor="#9b9b9b" />
+                android:textSize="15sp"
+                android:textColor="#ff1493" />
         </LinearLayout>
     </RelativeLayout>
 

@@ -204,7 +204,7 @@ public class menuFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private String get_shopid;
+    private String get_shopid,get_shopname;
     private View view;
 
     public static menuFragment newInstance() {
@@ -249,6 +249,7 @@ public class menuFragment extends Fragment implements View.OnClickListener {
         //获得shopid
         Bundle bundle = getArguments();
         get_shopid = bundle.getString(Config.REQUEST_PARAMETER_SHOP_ID);
+        get_shopname = bundle.getString(Config.REQUEST_PARAMETER_SHOPNAME);
 
 
         //为 RecyclerView 做显示设置
@@ -284,6 +285,7 @@ public class menuFragment extends Fragment implements View.OnClickListener {
                 }
                 intent1.putStringArrayListExtra(Config.FOOD_NAME_LIST, food_name_list);
                 intent1.putExtra(Config.REQUEST_PARAMETER_SHOP_ID, get_shopid);
+                intent1.putExtra(Config.REQUEST_PARAMETER_SHOPNAME, get_shopname);
                 System.out.println("menuFrag list size---------:" + OrderedFoodList.size());
                 getActivity().startActivity(intent1);
                 break;

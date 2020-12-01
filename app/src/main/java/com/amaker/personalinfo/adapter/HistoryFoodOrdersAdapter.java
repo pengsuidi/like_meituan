@@ -49,7 +49,7 @@ public class HistoryFoodOrdersAdapter extends RecyclerView.Adapter<HistoryFoodOr
     @Override
     public void onBindViewHolder(@NonNull final BoughtFoodViewHolder holder, int position) {
         final order_shop orders = datas.get(position);
-        holder.food_price.setText(orders.getFood_price());
+        holder.food_price.setText("¥"+orders.getFood_price());
         System.out.println("user_id:"+orders.getUser_id());
         holder.food_name.setText(orders.getFood_name());
 

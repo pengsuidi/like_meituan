@@ -46,7 +46,7 @@ public class HistoryOrdersFragment extends Fragment {
     SharedPreferences sharedPreferences;
     private RecyclerView recyclerView;
     private List<order_shop> datas = new ArrayList<>();
-    private List<order_shop> Alldatas = new ArrayList<>();
+    private List<order_shop> Alldatas = new ArrayList<>();//储存该用户在payment中的每一行数据
     private int inoid=-1;
     private GifImageView gifView;
     private List<Shop_Info> shop_info_buyList=new ArrayList<>();
@@ -63,15 +63,15 @@ public class HistoryOrdersFragment extends Fragment {
                         //网络请求成功
                         JSONArray jsonArray = (JSONArray) result.getData();
                         List<order_shop> order_shops = jsonArray.toJavaList(order_shop.class);
-                        System.out.println("个数:" + order_shops.size());
-                        System.out.println("--------inoid:"+inoid);
+//                        System.out.println("个数:" + order_shops.size());
+//                        System.out.println("--------inoid:"+inoid);
                         datas.clear();
+                        Alldatas.clear();
                         Alldatas.addAll(order_shops);
 
                         for (int i = 0; i < order_shops.size(); i++) {
                             if(order_shops.get(i).getOid()!=inoid)
                             {
-                                System.out.println("--------inoid:"+inoid);
                                 inoid=order_shops.get(i).getOid();
                                 datas.add(order_shops.get(i));//datas为每个订单只有一行数据
                                 //根据ShopId获取其图片

@@ -34,13 +34,15 @@ public class order_shop_Adapter extends RecyclerView.Adapter<order_shop_Adapter.
     private List<order_shop> datas = new ArrayList<>();
     private List<Shop_Info> shop_info_buyList = new ArrayList<>();
     private RecyclerView.Adapter adapter;
-    private List<order_shop> Alldatas=new ArrayList<>();
+    private List<order_shop> Alldatas = new ArrayList<>();
+    private List<order_shop> orderShopList = new ArrayList<>();;
+
     public order_shop_Adapter(List<order_shop> datas, SharedPreferences sharedPreferences, Context context, List<Shop_Info> shop_info_buyList, List<order_shop> Alldatas) {
         this.datas = datas;//datas包含所有的该用户的购买数据
         this.context = context;
         this.sharedPreferences = sharedPreferences;
-        this.shop_info_buyList=shop_info_buyList;
-        this.Alldatas=Alldatas;
+        this.shop_info_buyList = shop_info_buyList;
+        this.Alldatas = Alldatas;
     }
 
     /**
@@ -65,10 +67,10 @@ public class order_shop_Adapter extends RecyclerView.Adapter<order_shop_Adapter.
         final order_shop order_shop = datas.get(position);
 
         for (int i = 0; i < shop_info_buyList.size(); i++) {
-            if (order_shop.getShop_name()!=null&&order_shop.getShop_name().contentEquals(shop_info_buyList.get(i).getShop_name())) {
-                Bitmap tmp=getBitmapFromByte(shop_info_buyList.get(i).getShop_image());
-                tmp=Bitmap.createScaledBitmap(tmp,450,450,true);
-                tmp= CommonUtil.getRoundedCornerBitmap(tmp,20);
+            if (order_shop.getShop_name() != null && order_shop.getShop_name().contentEquals(shop_info_buyList.get(i).getShop_name())) {
+                Bitmap tmp = getBitmapFromByte(shop_info_buyList.get(i).getShop_image());
+                tmp = Bitmap.createScaledBitmap(tmp, 450, 450, true);
+                tmp = CommonUtil.getRoundedCornerBitmap(tmp, 20);
                 holder.shop_img.setImageBitmap(tmp);
                 break;
             }
@@ -88,6 +90,14 @@ public class order_shop_Adapter extends RecyclerView.Adapter<order_shop_Adapter.
                 view.getContext().startActivity(intent);
             }
         });
+        holder.shop_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ShopActivity.class);
+                intent.putExtra(Config.REQUEST_PARAMETER_SHOP_ID, order_shop.getShop_id());
+                view.getContext().startActivity(intent);
+            }
+        });
         holder.shop_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,24 +110,24 @@ public class order_shop_Adapter extends RecyclerView.Adapter<order_shop_Adapter.
 //        linearLayoutManager.setAutoMeasureEnabled(true);
         holder.child_recyclerView.setLayoutManager(linearLayoutManager);
 
-        List<order_shop> orderShopList = new ArrayList<>();//用以从所有数据即Alldatas中储存该oid(订单号)的食物数据
-        for (int i = 0; i < Alldatas.size(); i++)
-        {
-            if(Alldatas.get(i).getOid()==order_shop.getOid())
-            {
+        //用以从所有数据即Alldatas中储存该oid(订单号)的食物数据
+        orderShopList.clear();
+        for (int i = 0; i < Alldatas.size(); i++) {
+            if (Alldatas.get(i).getOid() == order_shop.getOid()) {
                 orderShopList.add(Alldatas.get(i));
-                System.out.println("大小:"+orderShopList.size());
+
+                System.out.println("订单号:" + Alldatas.get(i).getOid());
+                System.out.println("食品名字:" + Alldatas.get(i).getFood_name());
             }
         }
-        adapter=new HistoryFoodOrdersAdapter(orderShopList);
-        if(holder.child_recyclerView.getAdapter()==null)
-        {
+        adapter = new HistoryFoodOrdersAdapter(orderShopList);
+        if (holder.child_recyclerView.getAdapter() == null) {
             holder.child_recyclerView.setAdapter(adapter);
         }
 
 
-
     }
+
     /**
      * 告知 RecyclerView 子项（item） 的数量
      */
@@ -130,9 +140,9 @@ public class order_shop_Adapter extends RecyclerView.Adapter<order_shop_Adapter.
      * ViewHolder 对象，是 RecyclerView 中对 ITEM 循环利用的一个机制
      */
     class orderviewHolder extends RecyclerView.ViewHolder {
-        private Button to_comment,shop_name;
+        private Button to_comment, shop_name;
         private ImageButton shop_img;
-        private TextView  total_price, oid;
+        private TextView total_price, oid;
         private RecyclerView child_recyclerView;
 
         public orderviewHolder(@NonNull View itemView) {
@@ -147,8 +157,8 @@ public class order_shop_Adapter extends RecyclerView.Adapter<order_shop_Adapter.
         }
 
 
-
     }
+
     public Bitmap getBitmapFromByte(byte[] temp) {   //将二进制转化为bitmap
         if (temp != null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(temp, 0, temp.length);

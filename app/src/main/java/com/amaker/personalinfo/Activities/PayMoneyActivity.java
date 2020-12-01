@@ -41,7 +41,7 @@ import java.util.Map;
 import pl.droidsonroids.gif.GifImageView;
 
 public class PayMoneyActivity extends AppCompatActivity {
-    private String oid,shopid;
+    private String oid, shopid;
     private EditText edt_password;
     private Button pay;
     private GifImageView gif;
@@ -50,7 +50,7 @@ public class PayMoneyActivity extends AppCompatActivity {
     private List<String> food_name_list = new ArrayList<>();
     private List<HashMap<String, Object>> food_count = new ArrayList<>();//纪录食物名称对应的数量
     private List<String> already_food_names = new ArrayList<>();//用来保存已经有了的食物名字
-    private int count=0;
+    private int count = 0;
     private Handler get_OrderedFoodList_Handler = new Handler(Looper.myLooper()) {
         @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
@@ -162,10 +162,12 @@ public class PayMoneyActivity extends AppCompatActivity {
                         Map<String, Object> param = new HashMap<>();
                         param.put(Config.REQUEST_PARAMETER_USER_ID, getSharedPreferences("data", MODE_PRIVATE).getString(Config.REQUEST_PARAMETER_USER_ID, null));
                         param.put(Config.REQUEST_PARAMETER_FOOD_NAME, OrderedFoodList.get(i).getFood_name());
+                        System.out.println("上传已购买食物名字:" + OrderedFoodList.get(i).getFood_name());
                         param.put(Config.REQUEST_PARAMETER_FOOD_PRICE, OrderedFoodList.get(i).getFood_price());
                         param.put(Config.REQUEST_PARAMETER_TOTAL_PRICE, getIntent().getStringExtra("sum"));
                         param.put(Config.REQUEST_PARAMETER_OID, oid);
                         param.put(Config.REQUEST_PARAMETER_SHOP_ID, getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOP_ID));
+                        param.put(Config.REQUEST_PARAMETER_SHOPNAME, getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOPNAME));
                         System.out.println("PayMoneyAc:userid:" + getSharedPreferences("data", MODE_PRIVATE).getString(Config.REQUEST_PARAMETER_USER_ID, null));
                         OkHttpUtil.post(Config.URL_UPDATE_PAYMENT, param, exitHandler);
                     }
@@ -186,6 +188,11 @@ public class PayMoneyActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case Config.STATUS_OK://网络请求成功，但响应需要根据实际来操作
+
+                    //
+                    Result result = JSONObject.parseObject(msg.obj.toString(), Result.class);
+                    System.out.println("收到消息:"+result.getMessage());
+
                     //退出
 
                     NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -231,22 +238,21 @@ public class PayMoneyActivity extends AppCompatActivity {
                 case Config.STATUS_OK://是商家
                     Result result = JSONObject.parseObject(msg.obj.toString(), Result.class);
                     count++;
-                    if(count==OrderedFoodList.size())
-                    if (result.getCode() == 200) {
-                        Intent intent1 = new Intent(PayMoneyActivity.this, MainNavigationActivity.class);
-                        intent1.putExtra(Config.IF_Seller, true);
-                        startActivity(intent1);
-                        break;
-                    } else  //不是商家
-                    {
-                        Intent intent2 = new Intent(PayMoneyActivity.this, MainNavigationActivity.class);
-                        intent2.putExtra(Config.IF_Seller, false);
-                        startActivity(intent2);
+                    if (count == OrderedFoodList.size()) {
+                        if (result.getCode() == 200) {
+                            Intent intent1 = new Intent(PayMoneyActivity.this, MainNavigationActivity.class);
+                            intent1.putExtra(Config.IF_Seller, true);
+                            startActivity(intent1);
+                            break;
+                        } else  //不是商家
+                        {
+                            Intent intent2 = new Intent(PayMoneyActivity.this, MainNavigationActivity.class);
+                            intent2.putExtra(Config.IF_Seller, false);
+                            startActivity(intent2);
 
-                        break;
+                            break;
+                        }
                     }
-
-
                 default:
 
 
@@ -266,11 +272,12 @@ public class PayMoneyActivity extends AppCompatActivity {
         if (getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOP_ID) == null) {
             System.out.println("123123123123123");
             food_name_list.add("锅巴土豆");
-            shopid="1";
-        } else{
+            shopid = "1";
+        } else {
             System.out.println("aaaaaa");
             food_name_list = getIntent().getStringArrayListExtra(Config.FOOD_NAME_LIST);
-            shopid=getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOP_ID);
+            shopid = getIntent().getStringExtra(Config.REQUEST_PARAMETER_SHOP_ID);
+
         }
 
         //获取OrderedFoodList
